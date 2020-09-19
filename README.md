@@ -7,7 +7,7 @@ This is simple frame extractor
 
 I use it for our lab's dataset but this is not public yet.
 
-So I tested on one of the famouse benchmark dataset for human action recognition (HMDB-51 dataset). 
+So I tested on one of the famouse and light benchmark dataset for human action recognition (HMDB-51 dataset). 
 
 https://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/#Downloads
 
