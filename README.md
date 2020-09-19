@@ -13,7 +13,7 @@ https://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/#Do
 
 And it worked well.
 
-FPS option will be added
+FPS option will be added soon
 
 [how to use]
 ---------------
