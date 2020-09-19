@@ -33,5 +33,5 @@ output foramt :
             os.makedirs(os.path.join(dst+label+video_name))
         cv2.imwrite(dst+label+video_name+"\\"+fr_name,image)
     
-![캡처](./img/output.png)
+![캡처](output.png)
 
