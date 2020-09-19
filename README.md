@@ -5,7 +5,7 @@ Simple frame extractor for video dataset
 --------------
 This is simple frame extractor 
 
-I use it for our lab's dataset but this is now public dataset yet.
+I use it for our lab's dataset but this is not public yet.
 
 So I tested on one of the famouse benchmark dataset for human action recognition (HMDB-51 dataset). 
 
