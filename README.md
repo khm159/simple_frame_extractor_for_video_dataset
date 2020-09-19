@@ -24,6 +24,6 @@ input format :
 
 output foramt : 
 
-    output folder will be generated... 
+    output folder will be generated like this.
     destination_dir/video_name/frame000001.jpg 
     
