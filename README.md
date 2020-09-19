@@ -3,6 +3,9 @@ Simple frame extractor for video dataset
 
 [notice]
 --------------
+
+-2020.09.19
+
 This is simple frame extractor 
 
 I use it for our lab's dataset but this is not public yet.
