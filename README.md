@@ -27,7 +27,7 @@ output foramt :
     output folder will be generated like this.
     destination_dir/video_name/frame000001.jpg 
     
-    If you want to create a folder by label, just change his line in extract_frame()
+    If you want to create a folder by label, just change this code line in extract_frame()
     
         if not(os.path.isdir(dst+label+video_name)):
             os.makedirs(os.path.join(dst+label+video_name))
