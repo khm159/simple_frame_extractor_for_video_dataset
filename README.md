@@ -16,4 +16,14 @@ And it worked well.
 [how to use]
 ---------------
 
+If you follow the details below, the extractor will work on any dataset.
 
+input format :
+
+    The dataset must be in one folder.
+
+output foramt : 
+
+    output folder will be generated... 
+    destination_dir/video_name/frame000001.jpg 
+    
