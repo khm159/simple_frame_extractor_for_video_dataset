@@ -25,9 +25,10 @@ def main(path):
         _ = vid.split("\\")
         name = _[-1]
         label = _[-2]
-        if not(os.path.isdir(dst+"\\"+label+"\\"+name)):
-            os.makedirs(os.path.join(dst+"\\"+label+"\\"+name))
-        os.system("ffmpeg -i "+vid+" "+"-r "+str(fps)+" "+ "-start_number 0 "+dst+"\\"+label+"\\"+name+"\\frame%6d.jpg")
+        #print(dst+"\\"+label+"_"+name)
+        if not(os.path.isdir(dst+"\\"+label+"_"+name)):
+            os.makedirs(os.path.join(dst+"\\"+label+"_"+name))
+        os.system("ffmpeg -i "+vid+" "+"-r "+str(fps)+" "+ "-start_number 0 "+dst+"\\"+label+"_"+name+"\\frame%6d.jpg")
 
 
 def extract_frame(video_path, video_name, label, dst):
