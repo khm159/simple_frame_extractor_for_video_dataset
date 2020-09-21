@@ -7,10 +7,16 @@ import cv2
 import argparse
 from tqdm import tqdm
 
-
 dataset_path = "D:\\dataset\\ETRI_3D" #dataset directory 
-dst = "D:\\dataset\\ETRI_3D_RGB\\"
+dst = "D:\\dataset\\ETRI_3D_RGB"
+#dataset_path = "D:\\dataset\\NTU_CCTV"
+#dst = "D:\\dataset\\NTU_CCTV_RGB"
 
+## argparser 
+parser = argparse.ArgumentParser()
+parser.add_argument('--fps', required=True, help='set sampling rate')
+args = parser.parse_args()
+fps = args.fps
 
 def main(path):
     print("Searching video clips... ")
@@ -21,7 +27,15 @@ def main(path):
         _ = vid.split("\\")
         name = _[-1]
         label = _[-2]
-        extract_frame(vid,name, label, dst)
+        #extract_frame(vid,name, label, dst) #old version 
+        #print(vid) # D:\dataset\ETRI_3D\P001\A001_P001G001_C001.mp4
+        #print(name) # A001_P001_GOO1_Coo1.mp4
+        #print(label) # P001
+        #print(dst+"\\"+name.split(".")[0]+"\\frame%6d.jpg") #D:\dataset\ETRI_3D_RGB\A001_P001_G001_C001\frame%6d.jpg 
+        if not(os.path.isdir(dst+"\\"+label+"\\"+name)):
+            os.makedirs(os.path.join(dst+"\\"+label+"\\"+name))
+        os.system("ffmpeg -i "+vid+" "+"-r "+str(fps)+" "+ "-start_number 0 "+dst+"\\"+label+"\\"+name+"\\frame%6d.jpg")
+
 
 def extract_frame(video_path, video_name, label, dst):
     vidcap = cv2.VideoCapture(video_path)
