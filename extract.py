@@ -8,8 +8,8 @@ import argparse
 from tqdm import tqdm
 
 
-dataset_path = "D:\\hmdb51_org\\" #dataset directory 
-dst = "D:\\dataset\\"
+dataset_path = "D:\\dataset\\ETRI_3D" #dataset directory 
+dst = "D:\\dataset\\ETRI_3D_RGB\\"
 
 
 def main(path):
