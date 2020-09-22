@@ -48,6 +48,8 @@ output foramt :
     output folder will be generated like this.
     destination_dir/video_name/frame000001.jpg 
     
+    if you want to change this format please modify line below
+    
     if not(os.path.isdir(dst+"\\"+label+"_"+name)):
         os.makedirs(os.path.join(dst+"\\"+label+"_"+name))
         os.system("ffmpeg -i "+vid+" "+"-r "+str(fps)+" "+ "-start_number 0 "+dst+"\\"+label+"_"+name+"\\frame%6d.jpg")
