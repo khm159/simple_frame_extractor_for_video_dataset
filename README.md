@@ -6,7 +6,9 @@ Simple frame extractor for video dataset
 -2020.09.22
 
 added dependency
+
 fps option added.
+
 use argument like this
 
     python main.py --fps 30
