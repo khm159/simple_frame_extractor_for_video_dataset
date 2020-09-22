@@ -48,11 +48,9 @@ output foramt :
     output folder will be generated like this.
     destination_dir/video_name/frame000001.jpg 
     
-    If you want to create a folder by label, just change this code line in extract_frame()
-    
-        if not(os.path.isdir(dst+"\\"+label+"\\"+name)):
-            os.makedirs(os.path.join(dst+"\\"+label+"\\"+name))
-        os.system("ffmpeg -i "+vid+" "+"-r "+str(fps)+" "+ "-start_number 0 "+dst+"\\"+label+"\\"+name+"\\frame%6d.jpg")
+    if not(os.path.isdir(dst+"\\"+label+"_"+name)):
+        os.makedirs(os.path.join(dst+"\\"+label+"_"+name))
+        os.system("ffmpeg -i "+vid+" "+"-r "+str(fps)+" "+ "-start_number 0 "+dst+"\\"+label+"_"+name+"\\frame%6d.jpg")
 
     
 ![캡처](output.PNG)
