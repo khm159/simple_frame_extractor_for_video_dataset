@@ -5,10 +5,15 @@ Simple frame extractor for video dataset
 --------------
 -2020.09.22
 My Dataset is 2.33Tb. Using OpenCV is too slow. 
-So I use ffmpeg instead. you need to install below 
+So I use ffmpeg instead. 
 
-    pip install ffmpeg
+- for windows
+    download ffmpeg build for windows
+    https://www.gyan.dev/ffmpeg/builds/packages/
+    and add binary exe file's directory to windows environment variable path 
 
+- for linux
+    sudo apt-get install ffmpeg
 
 -2020.09.19
 
