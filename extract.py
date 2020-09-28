@@ -7,8 +7,8 @@ import cv2
 import argparse
 from tqdm import tqdm
 
-dataset_path = "" #dataset directory 
-dst = ""
+dataset_path = "D:\dataset\ETRI_3D" #dataset directory 
+dst = "D:\dataset\ETRI_3D_RGB"
 
 ## argparser 
 parser = argparse.ArgumentParser()
