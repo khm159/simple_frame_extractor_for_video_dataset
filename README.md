@@ -3,6 +3,28 @@ Simple frame extractor for video dataset
 
 [notice]
 --------------
+-2020.09.22
+
+added dependency
+
+fps option added.
+
+use argument like this
+
+    python main.py --fps 30
+
+My Dataset is 2.33Tb. Using OpenCV is too slow. 
+So I use ffmpeg instead. 
+
+- for windows
+
+    download ffmpeg build for windows
+    https://www.gyan.dev/ffmpeg/builds/packages/
+    and add binary exe file's directory to windows environment variable path 
+
+- for linux
+
+    sudo apt-get install ffmpeg
 
 -2020.09.19
 
@@ -32,11 +54,12 @@ output foramt :
     output folder will be generated like this.
     destination_dir/video_name/frame000001.jpg 
     
-    If you want to create a folder by label, just change this code line in extract_frame()
+    if you want to change this format please modify line below
     
-        if not(os.path.isdir(dst+label+video_name)):
-            os.makedirs(os.path.join(dst+label+video_name))
-        cv2.imwrite(dst+label+video_name+"\\"+fr_name,image)
+    if not(os.path.isdir(dst+"\\"+label+"_"+name)):
+        os.makedirs(os.path.join(dst+"\\"+label+"_"+name))
+        os.system("ffmpeg -i "+vid+" "+"-r "+str(fps)+" "+ "-start_number 0 "+dst+"\\"+label+"_"+name+"\\frame%6d.jpg")
+
     
 ![캡처](output.PNG)
 
