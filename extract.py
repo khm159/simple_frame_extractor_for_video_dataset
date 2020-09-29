@@ -7,8 +7,8 @@ import cv2
 import argparse
 from tqdm import tqdm
 
-dataset_path = "D:\dataset\ETRI_3D" #dataset directory 
-dst = "D:\dataset\ETRI_3D_RGB"
+dataset_path = "D:\\dataset\\ETRI_3D" #dataset directory 
+dst = "D:\dataset\ETRI_3D_RGB_RE"
 
 ## argparser 
 parser = argparse.ArgumentParser()
@@ -28,7 +28,7 @@ def main(path):
         #print(dst+"\\"+label+"_"+name)
         if not(os.path.isdir(dst+"\\"+label+"_"+name)):
             os.makedirs(os.path.join(dst+"\\"+label+"_"+name))
-        os.system("ffmpeg -i "+vid+" "+"-r "+str(fps)+" "+ "-start_number 0 "+dst+"\\"+label+"_"+name+"\\frame%6d.jpg")
+        os.system("ffmpeg -i "+vid+" "+"-r "+str(fps)+" "+ "-start_number 1 "+dst+"\\"+label+"_"+name+"\\frame%6d.jpg")
 
 
 def extract_frame(video_path, video_name, label, dst):
