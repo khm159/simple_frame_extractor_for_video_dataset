@@ -1,14 +1,13 @@
 ### https://github.com/khm159/simple_frame_extractor_for_video_dataset
 ### originally codded by https://github.com/khm159
-### Good Luck!!
 
 import os
 import cv2
 import argparse
 from tqdm import tqdm
 
-dataset_path = "D:\\dataset\\ETRI_3D" #dataset directory 
-dst = "D:\dataset\ETRI_3D_RGB_RE"
+dataset_path = "YOUR_DATASET_PATH" #dataset directory 
+dst = "FRAME_DIR_DST_PATH"
 
 ## argparser 
 parser = argparse.ArgumentParser()
@@ -22,14 +21,13 @@ def main(path):
     print(len(dir_list),"label, ",len(video_list)," video clips founded!", )
     print("Extracting Video frames...")
     for vid in tqdm(video_list):
-        _ = vid.split("\\")
+        _ = vid.split("/")
         name = _[-1]
         label = _[-2]
-        #print(dst+"\\"+label+"_"+name)
-        if not(os.path.isdir(dst+"\\"+label+"_"+name)):
-            os.makedirs(os.path.join(dst+"\\"+label+"_"+name))
-        os.system("ffmpeg -i "+vid+" "+"-r "+str(fps)+" "+ "-start_number 1 "+dst+"\\"+label+"_"+name+"\\frame%6d.jpg")
-
+        tgt_path = os.path.isdir(dst,name)
+        if not(tgt_path):
+            os.makedirs(tgt_path)
+        os.system("ffmpeg -i "+vid+" "+"-r "+str(fps)+" "+ "-start_number 1 "+tgt_path+"/frame%6d.jpg")
 
 def extract_frame(video_path, video_name, label, dst):
     vidcap = cv2.VideoCapture(video_path)
@@ -44,7 +42,6 @@ def extract_frame(video_path, video_name, label, dst):
             os.makedirs(os.path.join(dst+label+video_name))
         cv2.imwrite(dst+label+video_name+"\\"+fr_name,image)
         count += 1
-    
     
 def search(path):
     video_list = []
@@ -65,6 +62,6 @@ def search(path):
             
     return video_list, dir_list        
 
-
-main(dataset_path)
+if __name__=="__main__"():
+    main(dataset_path)
 
